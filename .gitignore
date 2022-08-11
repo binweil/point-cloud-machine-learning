@@ -127,3 +127,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Juptyer Notebook check points
+.ipynb_checkpoints
+
+# Tensoflow saved model
+.h5
+*.h5
