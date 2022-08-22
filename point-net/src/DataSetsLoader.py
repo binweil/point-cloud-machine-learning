@@ -8,14 +8,15 @@ from matplotlib import pyplot as plt
 
 
 class DataSetsLoader:
-    def __init__(self, num_points=2048, num_class=10):
+    def __init__(self, num_points=2048, num_class=10, use_internet=True):
         self.num_points = num_points
         self.num_class = num_class
         self.data_dir = "./datasets/ModelNet10.zip"
+        self.use_internet = use_internet
         self.load_datasets()
 
-    def load_datasets(self, use_internet=False):
-        if use_internet:
+    def load_datasets(self):
+        if self.use_internet:
             # 3D Vision Dataset: 128 each: http://3dvision.princeton.edu/projects/2014/3DShapeNets/ModelNet10.zip
             # Latest Datasets - 98 each: http://modelnet.cs.princeton.edu/ModelNet10.zip
             self.data_dir = tf.keras.utils.get_file(
